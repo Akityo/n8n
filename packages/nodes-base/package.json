@@ -339,6 +339,7 @@
       "dist/nodes/Airtable/AirtableTrigger.node.js",
       "dist/nodes/Amqp/Amqp.node.js",
       "dist/nodes/Amqp/AmqpTrigger.node.js",
+      "dist/nodes/DingbotSendMessageNode/DingbotSendMessageNode.js",
       "dist/nodes/ApiTemplateIo/ApiTemplateIo.node.js",
       "dist/nodes/Asana/Asana.node.js",
       "dist/nodes/Asana/AsanaTrigger.node.js",
