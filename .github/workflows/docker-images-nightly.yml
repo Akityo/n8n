@@ -1,14 +1,14 @@
 name: Docker Nightly Image CI
 
 on:
-  schedule:
-    - cron: '0 1 * * *'
+#  schedule:
+#    - cron: '0 1 * * *'
   workflow_dispatch:
     inputs:
       repository:
         description: 'GitHub repository to create image off.'
         required: true
-        default: 'n8n-io/n8n'
+        default: 'Akityo/n8n'
       branch:
         description: 'GitHub branch to create image off.'
         required: true
@@ -35,7 +35,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: ${{ github.event.inputs.repository || 'n8n-io/n8n' }}
+          repository: ${{ github.event.inputs.repository || 'Akityo/n8n' }}
           ref: ${{ github.event.inputs.branch || 'master' }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
