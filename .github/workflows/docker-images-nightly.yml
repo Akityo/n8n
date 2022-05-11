@@ -16,7 +16,7 @@ on:
       tag:
         description: 'Name of the docker tag to create.'
         required: true
-        default: 'nightly'
+        default: 'latest'
       merge-master:
         description: 'Merge with master.'
         type: boolean
@@ -57,7 +57,7 @@ jobs:
           file: ./docker/images/n8n-custom/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: akityo/n8n:${{ github.event.inputs.tag || 'nightly' }}
+          tags: akityo/n8n:${{ github.event.inputs.tag || 'latest' }}
       - name: Call Success URL - optionally
         run: |
           [[ "${{github.event.inputs.success-url}}" != "" ]] && curl -v ${{github.event.inputs.success-url}} || echo ""
