@@ -38,6 +38,9 @@ WORKDIR /data
 # Install all needed dependencies
 RUN npm_config_user=root npm install -g full-icu
 
+# Install n8n-nodes-module
+RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-dingbot
+
 # Install fonts
 RUN apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
 	update-ms-fonts && \
