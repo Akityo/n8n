@@ -57,7 +57,7 @@ jobs:
           file: ./docker/images/n8n-custom/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: Akityo/n8n:${{ github.event.inputs.tag || 'nightly' }}
+          tags: akityo/n8n:${{ github.event.inputs.tag || 'nightly' }}
       - name: Call Success URL - optionally
         run: |
           [[ "${{github.event.inputs.success-url}}" != "" ]] && curl -v ${{github.event.inputs.success-url}} || echo ""
