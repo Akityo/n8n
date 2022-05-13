@@ -4,6 +4,15 @@ on:
 #  schedule:
 #    - cron: '0 1 * * *'
   workflow_dispatch:
+    inputs:
+      build-args:
+        description: 'GitHub repository to create image off.'
+        required: true
+        default: '0.176.0'
+      tag:
+        description: 'Name of the docker tag to create.'
+        required: true
+        default: 'latest'
 
 jobs:
   build:
@@ -26,19 +35,15 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: ./docker/images/n8n
-        build-args: |
-          N8N_VERSION=0.176.0
+        build-args: N8N_VERSION=${{ github.event.inputs.build-args || '0.176.0' }}
         platforms: linux/amd64
         push: true
-        tags: |
-          ${{ secrets.DOCKER_USERNAME }}/n8n:latest
+        tags: akityo/n8n:${{ github.event.inputs.tag || 'latest' }}
     - name: Build (debian)
       uses: docker/build-push-action@v2
       with:
         context: ./docker/images/n8n-debian
-        build-args: |
-          N8N_VERSION=0.176.0
+        build-args:  N8N_VERSION=${{ github.event.inputs.build-args || '0.176.0' }}
         platforms: linux/amd64
         push: true
-        tags: |
-          ${{ secrets.DOCKER_USERNAME }}/n8n:latest-debian
+        tags: akityo/n8n:${{ github.event.inputs.tag || 'latest-debian' }}
