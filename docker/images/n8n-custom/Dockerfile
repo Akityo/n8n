@@ -41,10 +41,10 @@ RUN npm_config_user=root npm install -g full-icu
 COPY --from=builder /data ./
 
 # Install n8n-nodes-module
-RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-dingbot
+RUN npm install n8n-nodes-dingbot
 
 # Install n8n-nodes-pageres
-RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-pageres
+RUN npm install n8n-nodes-pageres
 
 # Install fonts
 RUN apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
