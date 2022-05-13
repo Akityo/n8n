@@ -31,7 +31,6 @@ jobs:
         platforms: linux/amd64
         push: true
         tags: |
-          ${{ secrets.DOCKER_USERNAME }}/n8n:${{ steps.vars.outputs.tag }}
           ${{ secrets.DOCKER_USERNAME }}/n8n:latest
     - name: Build (debian)
       uses: docker/build-push-action@v2
@@ -42,5 +41,4 @@ jobs:
         platforms: linux/amd64
         push: true
         tags: |
-          ${{ secrets.DOCKER_USERNAME }}/n8n:${{ steps.vars.outputs.tag }}-debian
           ${{ secrets.DOCKER_USERNAME }}/n8n:latest-debian
