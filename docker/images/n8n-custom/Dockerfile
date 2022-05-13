@@ -38,6 +38,9 @@ WORKDIR /data
 
 RUN NPM_GLOB_ROOT=$(npm root -g) 
 
+RUN ln -s $NPM_GLOB_ROOT/n8n-nodes-dingbot $NPM_GLOB_ROOT/n8n/node_modules/n8n-nodes-dingbot
+RUN ln -s $NPM_GLOB_ROOT/n8n-nodes-pageres $NPM_GLOB_ROOT/n8n/node_modules/n8n-nodes-pageres
+
 # Install all needed dependencies
 RUN npm_config_user=root npm link -g n8n-nodes-pageres n8n-nodes-dingbot
 
