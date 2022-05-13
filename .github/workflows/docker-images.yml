@@ -27,7 +27,7 @@ jobs:
       with:
         context: ./docker/images/n8n
         build-args: |
-          N8N_VERSION=n8n@0.176.0
+          N8N_VERSION=0.176.0
         platforms: linux/amd64
         push: true
         tags: |
@@ -38,7 +38,7 @@ jobs:
       with:
         context: ./docker/images/n8n-debian
         build-args: |
-          N8N_VERSION=n8n@0.176.0
+          N8N_VERSION=0.176.0
         platforms: linux/amd64
         push: true
         tags: |
