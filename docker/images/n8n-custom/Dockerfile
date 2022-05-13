@@ -39,7 +39,10 @@ WORKDIR /data
 RUN npm_config_user=root npm install -g full-icu
 
 # Install n8n-nodes-module
-RUN npm_config_user=root npm install -g n8n-nodes-dingbot
+RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-dingbot
+
+# Install n8n-nodes-pageres
+RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-pageres
 
 # Install fonts
 RUN apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
