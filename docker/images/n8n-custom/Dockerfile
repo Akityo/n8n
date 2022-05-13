@@ -38,6 +38,8 @@ WORKDIR /data
 # Install all needed dependencies
 RUN npm_config_user=root npm install -g full-icu
 
+COPY --from=builder /data ./
+
 # Install n8n-nodes-module
 RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-dingbot
 
@@ -52,8 +54,6 @@ RUN apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
 	find  /usr/share/fonts/truetype/msttcorefonts/ -type l -exec unlink {} \;
 
 ENV NODE_ICU_DATA /usr/local/lib/node_modules/full-icu
-
-COPY --from=builder /data ./
 
 COPY docker/images/n8n-custom/docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
