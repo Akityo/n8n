@@ -38,8 +38,6 @@ WORKDIR /data
 # Install all needed dependencies
 RUN npm_config_user=root npm install -g full-icu
 
-COPY --from=builder /data ./
-
 # Install n8n-nodes-module
 RUN npm install n8n-nodes-dingbot
 
@@ -52,6 +50,9 @@ RUN apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
 	fc-cache -f && \
 	apk del fonts && \
 	find  /usr/share/fonts/truetype/msttcorefonts/ -type l -exec unlink {} \;
+	
+COPY --from=builder /data ./
+
 
 ENV NODE_ICU_DATA /usr/local/lib/node_modules/full-icu
 
