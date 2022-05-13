@@ -1,9 +1,9 @@
 name: Docker Image CI
 
 on:
-  push:
-    tags:
-      - n8n@*
+#  schedule:
+#    - cron: '0 1 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
