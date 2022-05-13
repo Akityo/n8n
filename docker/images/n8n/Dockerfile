@@ -19,7 +19,7 @@ RUN apk --update add --virtual build-dependencies python3 build-base ca-certific
 	&& rm -rf /root /tmp/* /var/cache/apk/* && mkdir /root;
 
 # Install n8n-nodes-modules
-RUN cd /usr/local/lib/node_modules/n8n && npm link n8n-nodes-pageres n8n-nodes-dingbot
+RUN cd /usr/local/lib/node_modules/n8n && npm link n8n-nodes-dingbot
 
 # Install fonts
 RUN apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
