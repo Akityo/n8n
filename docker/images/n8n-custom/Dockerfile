@@ -18,6 +18,8 @@ COPY packages/design-system/ ./packages/design-system/
 COPY packages/editor-ui/ ./packages/editor-ui/
 COPY packages/nodes-base/ ./packages/nodes-base/
 COPY packages/workflow/ ./packages/workflow/
+RUN npm install n8n-nodes-dingbot
+RUN npm install n8n-nodes-pageres
 RUN rm -rf node_modules packages/*/node_modules packages/*/dist
 
 RUN npm config set legacy-peer-deps true
@@ -37,12 +39,6 @@ WORKDIR /data
 
 # Install all needed dependencies
 RUN npm_config_user=root npm install -g full-icu
-
-# Install n8n-nodes-module
-RUN npm install n8n-nodes-dingbot
-
-# Install n8n-nodes-pageres
-RUN npm install n8n-nodes-pageres
 
 # Install fonts
 RUN apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
