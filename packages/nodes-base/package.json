@@ -365,6 +365,7 @@
       "dist/nodes/Bitly/Bitly.node.js",
       "dist/nodes/Bitwarden/Bitwarden.node.js",
       "dist/nodes/Box/Box.node.js",
+      "dist/nodes/DingbotSendMessageNode/DingbotSendMessageNode.js",
       "dist/nodes/Box/BoxTrigger.node.js",
       "dist/nodes/Brandfetch/Brandfetch.node.js",
       "dist/nodes/Bubble/Bubble.node.js",
