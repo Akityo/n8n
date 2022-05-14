@@ -35,12 +35,6 @@ RUN apk add --update graphicsmagick tzdata tini su-exec git
 
 WORKDIR /data
 
-RUN NPM_GLOB_ROOT=$(npm root -g) 
-
-# Install all needed dependencies
-RUN npm_config_user=root npm link n8n-nodes-pageres n8n-nodes-dingbot
-
-
 # Install all needed dependencies
 RUN npm_config_user=root npm install -g full-icu
 
