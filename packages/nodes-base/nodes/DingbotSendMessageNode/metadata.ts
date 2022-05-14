@@ -3,6 +3,7 @@ import type { INodeTypeDescription } from 'n8n-workflow';
 export const description: INodeTypeDescription = {
   displayName: 'Dingbot - Send Message',
   name: 'dingbotSendMessage',
+	icon: 'file:dingtalk.logo.svg',
   group: ['communication'],
   version: 1,
   description: 'Send message from Dingbot',
