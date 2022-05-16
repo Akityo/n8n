@@ -338,7 +338,7 @@
       "dist/nodes/Airtable/Airtable.node.js",
       "dist/nodes/Airtable/AirtableTrigger.node.js",
       "dist/nodes/Amqp/Amqp.node.js",
-      "dist/PageresNode.node.js",
+      "dist/nodes/PageresNode/PageresNode.node.js",
       "dist/nodes/Amqp/AmqpTrigger.node.js",
       "dist/nodes/ApiTemplateIo/ApiTemplateIo.node.js",
       "dist/nodes/Asana/Asana.node.js",
