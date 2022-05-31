@@ -39,11 +39,11 @@ jobs:
         platforms: linux/amd64
         push: true
         tags: akityo/n8n:${{ github.event.inputs.tag || 'latest' }}
-    - name: Build (debian)
+    - name: Build (arm)
       uses: docker/build-push-action@v2
       with:
         context: ./docker/images/n8n-debian
         build-args:  N8N_VERSION=${{ github.event.inputs.build-args || '0.176.0' }}
-        platforms: linux/amd64
+        platforms: linux/arm64
         push: true
-        tags: akityo/n8n:${{ github.event.inputs.tag || 'latest-debian' }}
+        tags: akityo/n8n:${{ github.event.inputs.tag || 'latest-arm64' }}
